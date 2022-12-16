@@ -4,12 +4,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
+import Navbar from './components/Navbar/Navbar';
 import Signup from './pages/signup/Signup';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Switch>
           <Route exact path="/" element={<Home />}>
             <Home />

@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: blue;
+}
+
+a {
+    font-size: 18px;
+    color: black !important;
+    text-decoration: none !important;
+    margin: auto 8px;
+} 
+
+a:hover {
+    border: 2px solid purple;
+    padding: 4px;
+    border-radius: 2px;
+    transform:scale(0.5);
+}
