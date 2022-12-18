@@ -1,15 +1,22 @@
 import classes from "./Signup.module.css";
+import useSignup from "../../hooks/useSignup";
 import { useState } from "react";
 
 const Signup = () => {
-    const [name, setName] = useState(null)
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
+    const { signup, error, isLoading } = useSignup()
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        signup(email, password, name)
+    }
     return (
         <div className={classes.signup}>
             <h3 className="d-flex justify-content-center">Signup</h3>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name"></input>
                 </label>
@@ -19,7 +26,9 @@ const Signup = () => {
                 <label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"></input>
                 </label>
-                <button className={classes.btn}>Signup</button>
+                {!isLoading && <button className={classes.btn}>Signup</button>}
+                {isLoading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
             </form>
         </div>
     )
