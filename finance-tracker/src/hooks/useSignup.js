@@ -28,13 +28,13 @@ const useSignup = () => {
             // dispatch login action
             dispatch({ type: "LOGIN", payload: res.user })
 
-            if (!isCancelled) {
+            if (isCancelled) {
                 setIsLoading(false)
                 setError(null)
             }
         }
         catch (err) {
-            if (!isCancelled) {
+            if (isCancelled) {
                 console.log(err.message)
                 setError(err.message)
                 setIsLoading(false)
