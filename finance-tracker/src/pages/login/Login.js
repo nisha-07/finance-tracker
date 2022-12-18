@@ -2,8 +2,8 @@ import classes from "./Login.module.css";
 import { useState } from "react";
 
 const Login = () => {
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         <div className={classes.login}>
