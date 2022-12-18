@@ -1,3 +1,4 @@
+import { Audio } from 'react-loader-spinner'
 import classes from "./Signup.module.css";
 import useSignup from "../../hooks/useSignup";
 import { useState } from "react";
@@ -27,7 +28,7 @@ const Signup = () => {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"></input>
                 </label>
                 {!isLoading && <button className={classes.btn}>Signup</button>}
-                {isLoading && <p>Loading...</p>}
+                {isLoading && <div className="d-flex justify-content-center m-4"><Audio height="20px" /></div>}
                 {error && <p>{error}</p>}
             </form>
         </div>
