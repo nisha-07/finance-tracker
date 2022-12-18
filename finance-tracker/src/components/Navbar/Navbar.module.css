@@ -11,9 +11,11 @@ a {
     color: black !important;
     text-decoration: none !important;
     margin: auto 8px;
+    background-color: blue;
+    border: none;   
 } 
 
-a:hover {
+a:hover  {
     border: 2px solid purple;
     padding: 4px;
     border-radius: 2px;
