@@ -9,9 +9,9 @@ const Navbar = () => {
 
     return (
         <div className={classes.navbar}>
-            <h5 className="ms-4">My Money</h5>
+            <a className="ms-4" href="/">My Money</a>
             {!user ?
-                <div>
+                <div className={classes.links}>
                     <Link to="/signup">Sign up</Link>
                     <Link to="/login">Login</Link>
                 </div> :
