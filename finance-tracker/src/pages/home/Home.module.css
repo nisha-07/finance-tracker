@@ -4,6 +4,10 @@
     flex-direction: row;
 }
 
+.transactionList em {
+  color: red;
+}
+
 .transactions li {
   display: flex;
   align-items: center;

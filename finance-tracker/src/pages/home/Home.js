@@ -10,7 +10,7 @@ const Home = () => {
     const [amount, setAmount] = useState("")
     const { addDocument, deleteDocument, response } = useFirestore("transactions")
     const { user } = useAuthContext()
-    const { documents: transactions, error } = useCollection("transactions")
+    const { documents: transactions, error } = useCollection("transactions", ["uid", "==", user.uid])
 
     const handleSubmit = (e) => {
         e.preventDefault();
