@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
 import useAuthContext from "../../hooks/useAuthContext";
 import useLogout from "../../hooks/useLogout";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
     const { logout } = useLogout()
     const { user } = useAuthContext()
+    const name = useSelector((state) => state?.user?.user?.name)
 
     return (
         <div className={classes.navbar}>
@@ -16,7 +18,7 @@ const Navbar = () => {
                     <Link to="/login">Login</Link>
                 </div> :
                 (<>
-                    <em>Hello, {user.displayName}</em>
+                    <em>Hello, {name}</em>
                     <button onClick={logout}>Log out</button>
                 </>)
             }

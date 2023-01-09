@@ -1,5 +1,7 @@
 import { Audio } from "react-loader-spinner";
 import classes from "./Login.module.css";
+import { setUser } from "../../slices/userSlice";
+import { useDispatch } from "react-redux";
 import useLogin from "../../hooks/useLogin";
 import { useState } from "react";
 
@@ -7,10 +9,14 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { login, error, isLoading } = useLogin();
+    const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         login(email, password)
+        dispatch(setUser({
+            name: email,
+        }))
     }
 
     return (
