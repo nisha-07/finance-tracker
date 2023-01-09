@@ -20,7 +20,6 @@ const Navbar = () => {
                     <button onClick={logout}>Log out</button>
                 </>)
             }
-
         </div>
     )
 }

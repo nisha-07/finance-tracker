@@ -7,7 +7,7 @@
 }
 
 a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -18,7 +18,7 @@ a:hover {
 
 .links a {
     font-size: 18px;
-    color: black !important;
+    color: white !important;
     text-decoration: none !important;
     margin: auto 8px;
     background-color: blue;
@@ -35,4 +35,8 @@ a:hover {
 em {
     margin: 4px;
     color:aliceblue;
+}
+
+.navbar button {
+    color: white !important;
 }
